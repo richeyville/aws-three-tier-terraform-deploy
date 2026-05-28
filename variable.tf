@@ -2,14 +2,12 @@ variable "vpc_cidrblock" {
   description = "CIDR block for the VPC"
   type        = string
   default     = "192.168.0.0/16"
-  
 }
 
 variable "environment" {
   description = "Environment name (e.g., dev, staging, prod)"
   type        = string
   default     = "staging"
-  
 }
 
 variable "create_subnet" {
@@ -22,14 +20,13 @@ variable "countsub" {
   description = "Number of subnets to create"
   type        = number
   default     = 2
-  
 }
+
 variable "create_elastic_ip" {
   description = "Flag to create Elastic IPs"
   type        = bool
   default     = true
 }
-
 
 variable "desired_size" {
   description = "Desired size of the EKS node group"
@@ -46,29 +43,31 @@ variable "max_size" {
 variable "min_size" {
   description = "Minimum size of the EKS node group"
   type        = number
-  default     = 2 
+  default     = 2
 }
 
 variable "instance_types" {
   description = "Instance types for the EKS node group"
   type        = list(string)
-  default     = ["t2.micro"]    
-} 
+  default     = ["t2.micro"]
+}
 
 variable "capacity_type" {
   description = "Capacity type for the EKS node group"
   type        = string
   default     = "ON_DEMAND"
 }
+
 variable "eks_version" {
   description = "EKS cluster version"
   type        = string
   default     = "1.32"
 }
+
 variable "ami_type" {
   description = "AMI type for the EKS node group"
   type        = string
-  default     = "AL2_x86_64" # Use AL2_x86_64 for x86 instances, AL2_ARM_64 for ARM instances
+  default     = "AL2_x86_64"
 }
 
 variable "label_one" {
@@ -83,39 +82,28 @@ variable "zone_name" {
   default     = "example.com"
 }
 
+variable "cloudflare_zone_id" {
+  description = "Cloudflare Zone ID for themainpod14.online"
+  type        = string
+  default     = "4f788788895bd2ec13b47f8e01006c46"
+}
+
 variable "domain-name" {
   description = "Domain name to be created"
   type        = string
-  default     = "myapp.example.com"
+  default     = "themainpod14.online"
 }
 
-variable "namecheap_api_user" {
-  description = "Namecheap API user"
+variable "cloudflare_api_token" {
+  description = "Cloudflare API Token"
   type        = string
-  default     = "smartobi"
+  sensitive   = true
 }
-variable "namecheap_api_key" {
-  description = "Namecheap API key"
-  type        = string
-  default     = "a3ca57241b794d44b0fc3387ca9b62a9"
-}
-variable "namecheap_username" {
-  description = "Namecheap username"
-  type        = string
-  default     = "smartobi"
-}
-variable "namecheap_client_ip" {
-  description = "Client IP for Namecheap API access"
-  type        = string
-  default     = "3.101.24.8" # Replace with your actual client IP
-}
-
-#===========
 
 variable "db_instance_class" {
   description = "Instance class for the RDS database"
   type        = string
-  default     = "db.t3.micro" 
+  default     = "db.t3.micro"
 }
 
 variable "db_allocated_storage" {
@@ -123,12 +111,6 @@ variable "db_allocated_storage" {
   type        = number
   default     = 20
 }
-
-# variable "db_subnet_group_name" {
-#   description = "Name of the DB subnet group"
-#   type        = string
-#   default     = "my-db-subnet-group"
-# }
 
 variable "db_username" {
   description = "Username for the database"
@@ -148,6 +130,7 @@ variable "db_name" {
   type        = string
   default     = "production_db"
 }
+
 variable "cluster_name" {
   description = "The name of the EKS cluster"
   type        = string
@@ -158,11 +141,16 @@ variable "repository_name" {
   description = "Name of the ECR repository"
   type        = string
   default     = "eks-repository"
-  
 }
 
 variable "email" {
   description = "Email address for notifications and certificates"
   type        = string
-  default     = "support@digitalwitchng.online"
+  default     = "pod14everyone@gmail.com"
+}
+
+variable "domain_name" {
+  description = "Domain name"
+  type        = string
+  default     = "themainpod14.online"
 }
