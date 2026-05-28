@@ -45,10 +45,10 @@ spec:
   ingressClassName: external-nginx
   tls:
   - hosts:
-    - app.cloudwitches.online
-    secretName: app-cloudwitches-online
+    - app.richeyville.online
+    secretName: app-richeyville.online
   rules:
-  - host: app.cloudwitches.online
+  - host: app.richeyville.online
     http:
       paths:
       - path: /
@@ -58,4 +58,3 @@ spec:
             name: nginx-service
             port:
               number: 80
-
