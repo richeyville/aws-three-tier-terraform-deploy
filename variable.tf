@@ -83,9 +83,9 @@ variable "zone_name" {
 }
 
 variable "cloudflare_zone_id" {
-  description = "Cloudflare Zone ID for themainpod14.online"
+  description = "Cloudflare Zone ID for richeyville.online"
   type        = string
-  default     = "4f788788895bd2ec13b47f8e01006c46"
+  default     = "647c5943fd4abc571821a12d1304650f"
 }
 
 variable "domain-name" {
