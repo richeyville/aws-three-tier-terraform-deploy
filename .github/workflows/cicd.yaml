@@ -83,9 +83,7 @@ jobs:
       
       - name: 'Authenticate to EKS Cluster'
         run: |
-         # This strips any invisible leading/trailing whitespace or newlines
-         CLEAN_NAME=$(echo "${{ vars.EKS_CLUSTER_NAME }}" | xargs)
-         aws eks update-kubeconfig --name "$CLEAN_NAME" --region us-east-1
+         aws eks update-kubeconfig --name "production-eks-cluster" --region us-east-1
 
       - name: 'Deploying the ClusterIssuer to EKS'
         run: kubectl apply -f ClusterIssuer.yaml
