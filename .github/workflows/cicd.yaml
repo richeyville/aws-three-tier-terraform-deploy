@@ -94,13 +94,6 @@ jobs:
         run: kubectl apply -f ingress-argocd.yaml -n argocd
 
 
-
-
-        
-
-        
-
-
         
 
 
