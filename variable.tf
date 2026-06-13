@@ -91,7 +91,7 @@ variable "cloudflare_zone_id" {
 variable "domain-name" {
   description = "Domain name to be created"
   type        = string
-  default     = "themainpod14.online"
+  default     = "richeyville.online"
 }
 
 variable "cloudflare_api_token" {
@@ -146,11 +146,11 @@ variable "repository_name" {
 variable "email" {
   description = "Email address for notifications and certificates"
   type        = string
-  default     = "pod14everyone@gmail.com"
+  default     = "richeyville@outlook.com"
 }
 
 variable "domain_name" {
   description = "Domain name"
   type        = string
-  default     = "themainpod14.online"
+  default     = "richeyville.online"
 }
